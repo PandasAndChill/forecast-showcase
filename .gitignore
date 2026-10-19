@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.pytest_cache/
+.ruff_cache/
+.DS_Store
+# Never commit real data, even by accident
+data/
+*.xlsx
+*.xls
+*.parquet
+.env
