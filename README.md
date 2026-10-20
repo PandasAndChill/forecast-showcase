@@ -137,6 +137,11 @@ and models are fictional; the synthetic market is built to reproduce the *struct
 problem (strong country preferences, country-specific misfiling, partial reference coverage), not
 its numbers.
 
+## 8. Related projects
+
+- **[PlaceSignal](https://github.com/PandasAndChill/placesignal-showcase)** — puts ratings and reviews
+  on a map, finds what drives them, and shows the reviews behind every number.
+
 ---
 
 **Petr Shovoldaev** — Lead Consumer & Market Analyst, Paris. Market intelligence × Python
