@@ -17,6 +17,36 @@
 
 ---
 
+## The product: Forecast Studio
+
+The method lives inside **Forecast Studio**, a Mac app I built on top of the production engine
+so the forecast can be explored, challenged and changed live in a meeting — not emailed as a
+spreadsheet. Shown here on synthetic data.
+
+![Forecast Studio guided tour](assets/app/studio_tour.gif)
+
+| | |
+|---|---|
+| **Answer first** | Each view opens with one headline sentence generated from the data (“Battery-electric becomes Europe's largest powertrain in 2027 — 51% of new cars by 2030”), then the evidence. |
+| **What-if, safely** | Set a target (“BEV 75% of German C-SUV by 2030”) and see the consequence for the segment, the country and Europe *before* applying. Totals always reconcile, locked powertrains never move, impossible edits are refused with the reason, and every change is logged and undoable. |
+| **Compare scenarios** | Which markets move, where the volume goes, and the audit trail of edits behind it. |
+| **Smaller markets** | The method on this page, with its backtest, in the app. |
+| **Demo mode** | One key blurs every number on screen (KPIs, tables, tooltips, axes, numbers in sentences) while shapes stay visible — on by default for confidential data. |
+| **Present** | A 9-step guided tour with talking points, for walking a stakeholder through it. |
+
+<table><tr>
+<td><img src="assets/app/studio_editor.png" alt="Scenario editor with impact preview"><br><sub>Editor: the impact of an edit before it is applied</sub></td>
+<td><img src="assets/app/studio_demo_mode.png" alt="Demo mode"><br><sub>Demo mode: numbers hidden, shapes kept</sub></td>
+</tr><tr>
+<td><img src="assets/app/studio_compare.png" alt="Compare scenarios"><br><sub>Compare: what a scenario changes</sub></td>
+<td><img src="assets/app/studio_overview_dark.png" alt="Dark mode"><br><sub>Follows the system light/dark setting</sub></td>
+</tr></table>
+
+**Built with** Python, pandas, FastAPI, plain HTML/CSS/JS and ECharts. No build step, it runs
+offline, and it launches with one click from the Desktop. Every number comes from the forecast
+engine's service API, never from the interface. The app's code lives in the private repository
+with the engine; this repository reproduces the method.
+
 ## 1. The business problem
 
 The regional block hides very different markets. Copying its average onto each country — the
@@ -89,6 +119,7 @@ production (described here, not included — it is tied to licensed data):
 | **Quality gates** | Every run checks the iron rule, country and regional totals, negative volumes and release consistency, and stops the build on failure. |
 | **Testing** | ~900 automated tests on synthetic fixtures; a rolling-origin backtest re-run on each methodology change. |
 | **Engineering hygiene** | Private GitHub repo with CI (lint, tests, data-leak guards), pre-commit and pre-push hooks that block proprietary files, configuration-driven paths, Architecture Decision Records for every method change. |
+| **Interface** | Forecast Studio (above): FastAPI over the engine's service layer; the interface holds no business arithmetic, so it was swapped from an earlier Streamlit prototype without touching a calculation. |
 | **Confidentiality by design** | Code and documentation are versioned; data, mappings and outputs never are. This public repo is a direct product of that separation. |
 
 ## 5. How it was built — iteratively
@@ -103,7 +134,8 @@ the next step.
 | v2 | Label correction (direct + Bayes) | Backtest residuals traced to misfiled mild hybrids. |
 | v3 | Tilts persist beyond the vendor horizon | Long-range extension was snapping countries back to the average. |
 | v4 | Integrated as a pipeline stage with gates and a refresh script | From analysis to something the team runs every release. |
-| v5 *(in progress)* | Review loop with the market experts | Edge cases (tiny markets, new variants) belong to people who know them. |
+| v5 | Forecast Studio: scenarios, previewed impact, demo mode, guided tour | The forecast gets used when people can question it live. |
+| v6 *(in progress)* | Review loop with the market experts | Edge cases (tiny markets, new variants) belong to people who know them. |
 
 This showcase followed the same loop. The first synthetic test showed label correction making
 things *worse*: misfiling was identical in every country, so raking absorbed it, and the regional
@@ -139,6 +171,9 @@ its numbers.
 
 ## 8. Related projects
 
+- **[VoxTube](https://github.com/PandasAndChill/voxtube-showcase)** — reads a product's public
+  reception on YouTube, across markets and languages, and turns comments into insights a marketing
+  team can use.
 - **[PlaceSignal](https://github.com/PandasAndChill/placesignal-showcase)** — puts ratings and reviews
   on a map, finds what drives them, and shows the reviews behind every number.
 
