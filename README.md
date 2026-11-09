@@ -35,7 +35,8 @@ spreadsheet. Shown here on synthetic data.
 | **Compare** | Scenario vs base — and release vs release: which markets a new vendor forecast upgraded or downgraded. |
 | **Smaller markets** | The method on this page, run on the real data: coverage, each country's mix against the block, and the iron-rule check. |
 | **Demo mode** | One key blurs every number on screen (KPIs, tables, tooltips, axes, numbers in sentences) while shapes stay visible — on by default for confidential data. |
-| **Present** | A 9-step guided tour with talking points, for walking a stakeholder through it. |
+| **Present** | A 12-step guided tour with talking points, for walking a stakeholder through it. |
+| **⌘K** | One search box to jump to any view, run any analysis, or send a question to Ask — no menus to hunt through during a call. |
 
 <table><tr>
 <td><img src="assets/app/studio_explore.png" alt="Explore"><br><sub>Explore: chart bank and builder, down to model generation</sub></td>
@@ -46,6 +47,9 @@ spreadsheet. Shown here on synthetic data.
 </tr><tr>
 <td><img src="assets/app/studio_demo_mode.png" alt="Demo mode"><br><sub>Demo mode: numbers hidden, shapes kept</sub></td>
 <td><img src="assets/app/studio_compare.png" alt="Compare scenarios"><br><sub>Compare: what a scenario changes</sub></td>
+</tr><tr>
+<td><img src="assets/app/studio_palette.png" alt="Command palette"><br><sub>⌘K: jump, analyse or ask from one box</sub></td>
+<td><img src="assets/app/studio_overview_dark.png" alt="Dark mode"><br><sub>Follows the system light / dark setting</sub></td>
 </tr></table>
 
 **Under the hood.** Each forecast release is packaged into a compact, documented **data store**
