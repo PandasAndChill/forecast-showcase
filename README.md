@@ -36,7 +36,7 @@ spreadsheet. Shown here on synthetic data.
 | **Compare** | Scenario vs base — and release vs release: which markets a new vendor forecast upgraded or downgraded. |
 | **Smaller markets** | The method on this page, run on the real data: coverage, each country's mix against the block, and the iron-rule check. |
 | **Demo mode** | One key blurs every number on screen (KPIs, tables, tooltips, axes, numbers in sentences) while shapes stay visible — on by default for confidential data. |
-| **Present** | A 12-step guided tour with talking points, for walking a stakeholder through it. |
+| **Present** | A 14-step guided tour with talking points, for walking a stakeholder through it. |
 | **⌘K** | One search box to jump to any view, run any analysis, or send a question to Ask — no menus to hunt through during a call. |
 
 <table><tr>
